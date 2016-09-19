@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<script>
+	window.onload = function (){
+	  	var btn = document.getElementsByTagName("input");
+
+	  	btn[1].onclick = function (){
+	  		var val1 = btn[0].value;         // 记录输入框的值
+	  		if( val1 === "" ){               // 输入为空的情况
+		  		alert("请输入内容~");
+		  	} else if( isNaN(val1) ){        // 输入为非数字的情况
+		  		alert("请输入数字~");
+			} else if( val1.charAt(0) == 0 ){      // 以0开头的情况
+	  			alert("不能以0开头~");
+	  		} else if ( parseInt(val1) != val1 ){  // 有小数点的情况
+	  			alert("请输入整数~");
+	  		} else if ( val1.length < 5 || val1.length > 10){  // 数字不在5-10位之间的情况
+	  			alert("请输入5-10位整数~");
+			} else {
+				alert("是QQ号")
+			}
+		    btn[0].value = "";
+	  	}
+	}
+</script>
+</head>
+	
+<body>
+
+请输入QQ号码：<input type="text" />
+<input type="button" value="判断" />
+
+<!--
+	0123
+-->
+
+<br />
+1、有没有输入<br />
+2、输入的是不是数字<br />
+3、不能有0在前面<br />
+4、不能是小数<br />
+5、输入的数字必须在5位以上、10位以内<br />
+
+</body>
+</html>
